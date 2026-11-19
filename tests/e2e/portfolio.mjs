@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { mkdir, writeFile } from "node:fs/promises";
 
 const origin = process.env.PREVIEW_URL ?? "http://localhost:3000";
-const output = "test-results/phase-3";
+const output = "test-results/phase-4.1";
 const sizes = [[1920,1080],[1440,900],[1366,768],[768,1024],[390,844],[375,812]];
 const projects = [
   ["austral-group", "Austral Group"],

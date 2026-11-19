@@ -1,8 +1,10 @@
-/node_modules/
+node_modules/
 /.npm-cache/
-/.next/
-/out/
+.next/
+out/
+/apps/api/dist/
 /test-results/
 *.tsbuildinfo
 *.log
 .env*
+!.env.example
