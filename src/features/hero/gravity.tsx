@@ -19,13 +19,15 @@ function randomSequence() {
 
 export function Gravity() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const controlRef = useRef<HTMLButtonElement>(null);
   const pointer = useRef<Point | null>(null);
   const pulse = useRef<Pulse | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    const control = controlRef.current;
     const context = canvas?.getContext("2d");
-    if (!canvas || !context) return;
+    if (!canvas || !context || !control) return;
 
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
     const random = randomSequence();
@@ -131,8 +133,10 @@ export function Gravity() {
     intersection.observe(canvas);
     document.addEventListener("visibilitychange", sync);
     reduced.addEventListener("change", sync);
+    control.hidden = false;
     sync();
     return () => {
+      control.hidden = true;
       stop();
       resize.disconnect();
       intersection.disconnect();
@@ -153,6 +157,8 @@ export function Gravity() {
     <div className="gravity">
       <canvas ref={canvasRef} className="gravity-canvas" aria-hidden="true" />
       <button
+        ref={controlRef}
+        hidden
         type="button"
         className="gravity-input"
         aria-label="Send a pulse through Gravity"

@@ -1,12 +1,10 @@
 import { site } from "@/content/site";
+import { WorkSection } from "./work-section";
 
 export function PortfolioSections() {
   return (
     <div className="shell portfolio">
-      <section id="work" className="portfolio-row" aria-labelledby="work-title">
-        <h2 id="work-title">Work</h2>
-        <p>Projects and case studies will be published here.</p>
-      </section>
+      <WorkSection />
       <section id="about" className="portfolio-row" aria-labelledby="about-title">
         <h2 id="about-title">About</h2>
         <p>{site.about}</p>

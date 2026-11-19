@@ -30,7 +30,7 @@ section { scroll-margin-top: 1.5rem; }
 .eyebrow, .figure-label, .scroll-cue { @apply font-mono text-xs tracking-[.14em] uppercase; }
 .eyebrow { @apply mb-7 flex items-center gap-3 text-muted; }
 .eyebrow > span { @apply inline-block h-px w-7 bg-muted; }
-.hero h1 { font-size: clamp(4rem, 8.2vw, 9.4rem); line-height: .87; letter-spacing: -.092em; font-weight: 550; }
+.hero h1 { font-size: clamp(4rem, 8.2vw, 9.4rem); line-height: 1; letter-spacing: -.055em; font-weight: 550; }
 .hero-description { @apply mt-8 max-w-[32ch] text-muted; font-size: clamp(1rem, 1.5vw, 1.25rem); line-height: 1.55; }
 .work-link { @apply mt-8 inline-flex min-h-12 items-center justify-center rounded-full border border-foreground bg-foreground px-6 text-sm font-semibold text-background transition-colors hover:bg-surface hover:text-foreground; }
 .gravity {
@@ -44,12 +44,32 @@ section { scroll-margin-top: 1.5rem; }
 .gravity-input:focus-visible { outline-offset: -10px; }
 .hero-footer { @apply flex min-h-17 items-center justify-between gap-4 border-b border-white/15 text-muted; }
 .scroll-cue { @apply inline-flex min-h-11 items-center gap-2 opacity-80; }
-.figure-label > span { @apply mx-1 text-muted; }
 
 .portfolio-row { @apply grid items-baseline gap-6 border-b border-white/15; grid-template-columns: 1fr 1.2fr; padding-block: clamp(3.5rem, 8vw, 8rem); }
 .portfolio-row h2 { font-size: clamp(2.5rem, 5vw, 5.25rem); line-height: 1; letter-spacing: -.072em; }
 .portfolio-row p, .portfolio-row ul { @apply max-w-[45ch] text-lg leading-relaxed text-muted; }
 .portfolio-row a { @apply underline underline-offset-4 hover:text-foreground; }
+.work-section { @apply items-start; }
+.work-section .project-index { @apply w-full max-w-none; }
+.project-index > li { @apply border-b border-white/15 py-7; }
+.project-index > li:first-child { @apply pt-0; }
+.project-index > li:last-child { @apply border-0 pb-0; }
+.project-index h3 { @apply mt-1 mb-2 text-foreground; font-size: clamp(1.6rem, 3vw, 2.7rem); line-height: 1.12; letter-spacing: -.045em; }
+.project-index h3 a { @apply decoration-transparent transition-colors hover:decoration-current focus-visible:decoration-current; }
+.project-index .project-status, .project-status { @apply font-mono text-xs tracking-[.08em] uppercase text-muted; }
+.project-index .project-stack { @apply mt-3 text-sm; }
+.project-page { @apply max-w-6xl; }
+.project-intro { @apply border-b border-white/15; padding-block: clamp(3rem, 9vw, 7rem); }
+.project-return { @apply mb-9 inline-block text-sm text-muted underline underline-offset-4 hover:text-foreground; }
+.project-intro h1 { @apply mt-3 font-medium; font-size: clamp(2.75rem, 8vw, 7rem); line-height: 1.04; letter-spacing: -.055em; }
+.project-lede { @apply mt-6 max-w-[45ch] text-lg text-muted; }
+.project-technologies, .project-links { @apply mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm; }
+.project-technologies { @apply text-muted; }
+.project-links a { @apply underline underline-offset-4 hover:text-muted; }
+.project-detail { @apply grid gap-4 border-b border-white/15 py-9 sm:grid-cols-[1fr_2fr] sm:py-12; }
+.project-detail h2 { @apply text-xl font-medium tracking-tight; }
+.project-detail p, .project-detail ul { @apply max-w-[57ch] text-base leading-relaxed text-muted; }
+.project-detail ul { @apply list-disc space-y-2 pl-5; }
 .site-footer { @apply flex min-h-24 items-center justify-between gap-4 text-sm text-muted; }
 .site-footer a { @apply underline underline-offset-4 hover:text-foreground; }
 
@@ -64,14 +84,14 @@ section { scroll-margin-top: 1.5rem; }
   .nav-links { @apply gap-x-6; }
   .hero { min-height: 0; }
   .hero-grid { grid-template-columns: 1fr; }
-  .hero-copy { padding-block: 3.25rem .5rem; }
-  .hero h1 { max-width: 9ch; font-size: clamp(3.4rem, 13vw, 5.25rem); }
+  .hero-copy { padding-block: clamp(2rem, 5svh, 3rem) .5rem; }
+  .hero h1 { font-size: clamp(3.4rem, 15vw, 5.25rem); }
   .eyebrow { @apply mb-5; }
   .hero-description { @apply mt-5; }
   .work-link { @apply mt-6; }
-  .gravity { max-width: min(100%, 26rem); }
+  .gravity { max-width: min(100%, 26rem, 48svh); }
   .hero-footer { @apply min-h-14; }
-  .hero-footer .scroll-cue, .figure-label { letter-spacing: .06em; }
+  .hero-footer .scroll-cue, .figure-label { letter-spacing: .08em; }
   .portfolio-row { grid-template-columns: 1fr; gap: 1rem; }
 }
 

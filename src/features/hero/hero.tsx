@@ -16,7 +16,7 @@ export function Hero() {
       </div>
       <div className="hero-footer">
         <ScrollCue />
-        <span className="figure-label">Gravity <span aria-hidden="true">/</span> Orbital study</span>
+        <span className="figure-label">Gravity</span>
       </div>
     </section>
   );
